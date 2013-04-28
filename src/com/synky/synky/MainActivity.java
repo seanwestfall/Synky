@@ -1,5 +1,7 @@
 package com.synky.synky;
 
+import com.navdrawer.SimpleSideDrawer;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,14 +16,19 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	Button profile, contacts, scan, preferences;
 	static String contents;
+	SimpleSideDrawer mSlidingMenu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		
+		mSlidingMenu = new SimpleSideDrawer( this );
+	    mSlidingMenu.setLeftBehindContentView( R.layout.behind_menu_left );
 
 		initViews();
+		
 		profile.setOnClickListener(this);
 		contacts.setOnClickListener(this);
 		scan.setOnClickListener(this);
