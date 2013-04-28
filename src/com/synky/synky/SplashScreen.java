@@ -26,7 +26,6 @@ public class SplashScreen extends Activity{
 				Thread.sleep(2000);
 			}catch (Exception e) {
 				
-				// comment added
 			}
 			
 			Intent intent = new Intent(getApplicationContext(), MainActivity.class);
