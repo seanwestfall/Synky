@@ -1,7 +1,5 @@
 package com.synky.synky;
 
-import com.navdrawer.SimpleSideDrawer;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +9,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.navdrawer.SimpleSideDrawer;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	Button profile, contacts, scan, preferences;
+	private Button profile, contacts, scan, preferences;
+	private ImageButton slideMenu;
 	static String contents;
-	SimpleSideDrawer mSlidingMenu;
+	private SimpleSideDrawer mSlidingMenu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		contacts.setOnClickListener(this);
 		scan.setOnClickListener(this);
 		preferences.setOnClickListener(this);
+		
+		slideMenu.setOnClickListener(this);
 
 	}
 
@@ -42,6 +46,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		contacts = (Button) findViewById(R.id.btn_contacts);
 		scan = (Button) findViewById(R.id.btn_scan);
 		preferences = (Button) findViewById(R.id.btn_pref);
+		
+		slideMenu = (ImageButton) findViewById(R.id.image_btn);
 
 	}
 
@@ -81,6 +87,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			MainActivity.this.startActivity(intent);
 
 			break;
+		case R.id.image_btn:
+			 mSlidingMenu.toggleLeftDrawer();
 
 		default:
 			break;
