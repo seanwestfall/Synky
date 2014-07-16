@@ -2,10 +2,6 @@ Synky
 =====
 Permission based mobile business cards<br />
 
-Shahram Shokrian<br />
-Admad Nemati<br />
-Sean Westfall<br />
-
 http://www.hackathon.io/synky<br />
 INDEPENDENT DIGITAL ARTISTS™<br />
 www.ida.co<br />
